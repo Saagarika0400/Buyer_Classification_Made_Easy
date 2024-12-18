@@ -214,6 +214,15 @@ elif option == 'Data Visualization':
     fig = px.bar(df, x='Month', y='Count', color='Revenue', title="Revenue Distribution by Month", labels={"Month": "Month", "Count": "Count of Revenue (0s and 1s)"}, color_discrete_map={0: 'blue', 1: 'orange'}, barmode='stack')
     st.plotly_chart(fig)
 
+    
+    # **Observation**:
+    st.markdown("""
+    **Insight**:
+    - May and November have the highest number of both buyers and non-buyers, indicating that these months are the most active for website traffic and conversions.
+    The proportion of buyers to non-buyers is highest in Nov, maybe because of Black Friday and Thanksgiving offers, suggesting that Nov is the most favorable month for driving sales and increasing revenue.
+    Months like February and July have a relatively lower number of both buyers and non-buyers, indicating lower activity during these periods.
+    """)
+
     # Scatterplots
     query = """
     SELECT Administrative, Informational, ProductRelated, TotalDuration, Revenue
